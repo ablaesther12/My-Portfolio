@@ -29,10 +29,17 @@
 }
 
 .nav-logo {
-  font-size: 50px;
-  color: rgb(46, 5, 141);
+  font-size: 30px;
   font-style: italic;
+  color: rgb(46, 5, 141);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
+}
+
+.nav-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero {
@@ -87,6 +94,10 @@
   text-transform: uppercase;
   margin-right: 15px;
   border-radius: 20px;
+}
+.image img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 /* about Section */
@@ -376,8 +387,8 @@
 /* portfolio galerry */
 .portfolio-section {
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -392,58 +403,59 @@
   color: #1e0688;
   margin-bottom: 20px;
 }
+/*  */
 
-.portfolio-title::before {
-  content: "GALLERY";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 4.5rem;
-  color: rgba(0, 0, 0, 0.05);
-  z-index: -1;
+#gallery {
+  margin: 2em;
 }
 
-.filter-buttons {
+.filter {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 25px;
+  margin-bottom: 1em;
+  justify-content: center; /* Center the filter buttons */
 }
 
-.filter-buttons button {
-  padding: 8px 16px;
-  border: 2px solid #270477;
-  border-radius: 20px;
-  background-color: transparent;
-  color: #20077a;
+.filter-btn {
+  background-color: #23035f;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 3px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.filter-buttons button.active,
-.filter-buttons button:hover {
-  background-color: #23045c;
-  color: #fff;
+.filter-btn:hover {
+  background-color: #19065e;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Increased gap between images */
+  justify-content: center; /* Center the images */
 }
 
-.portfolio-item img {
-  width: 100%;
+.image {
+  width: 225px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(22, 2, 107, 0.1);
+  transition: transform 0.3s ease; /* Added transition for hover effect */
+}
+
+.image img:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+img {
   height: 200px;
+  width: 200px;
+  display: block;
+  border-radius: 5px;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item img:hover {
-  transform: scale(1.05);
+  margin: 10px;
 }
 /* Testimonial */
 .review-section {
@@ -608,28 +620,6 @@ textarea {
   color: #fff;
 }
 
-.social-icons {
-  margin-bottom: 20px;
-}
-
-.social-icons a {
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-  margin: 0 5px;
-  background-color: #fff;
-  color: #000;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 18px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-  background-color: #000;
-  color: #fff;
-}
-
 .footer-links {
   margin-bottom: 15px;
 }
@@ -647,8 +637,4 @@ textarea {
 
 .footer-text {
   font-size: 12px;
-}
-
-.footer-text b {
-  font-weight: bold;
 }
