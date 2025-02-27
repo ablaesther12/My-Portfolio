@@ -9,9 +9,10 @@
   flex-direction: row;
   justify-content: space-evenly;
   padding: 25px;
-  position: relative;
   color: black;
-  background-color: white;
+  background-color: rgb(236, 228, 228);
+  position: fixed;
+  width: 100%;
 }
 
 .nav-right {
@@ -310,8 +311,6 @@
 }
 
 /* skills */
-
-
 
 /* my services */
 .services-section {
