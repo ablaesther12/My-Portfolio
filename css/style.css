@@ -12,8 +12,13 @@
   color: black;
   background-color: rgb(236, 228, 228);
   position: fixed;
-  width: 100%;
+  width: 100vw;
 }
+.navbar a{
+  text-decoration: none;
+  color: black;
+}
+
 
 .nav-right {
   display: flex;
@@ -51,7 +56,10 @@
   background-position: cover;
   background-attachment: fixed;
 }
-
+.hero-overlay a{
+  text-decoration: none;
+  color: white;
+}
 .hero-overlay div {
   height: 100vh;
   display: flex;
