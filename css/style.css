@@ -51,7 +51,6 @@
 .hero {
   height: 100vh;
   background-image: url(../img/3.jpg);
-  background-color: rgb(14, 14, 150);
   background-size: cover;
   background-position: cover;
   background-attachment: fixed;
