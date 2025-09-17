@@ -649,3 +649,181 @@ textarea {
 .footer-text {
   font-size: 12px;
 }
+
+
+/* --- Your existing CSS --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Added for better layout control */
+  scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Adjusted for better spacing */
+  align-items: center; /* Vertically align items */
+  padding: 20px 25px;
+  color: black;
+  background-color: rgb(236, 228, 228);
+  position: fixed;
+  width: 100%; /* Use 100% instead of 100vw to avoid scrollbar issues */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure navbar stays on top */
+}
+
+/* ... (rest of your existing CSS up to the media queries) ... */
+
+/* Hamburger Menu - Initially hidden on desktop */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* --- HERO SECTION --- */
+.hero-overlay h4 {
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  font-weight: 500;
+  font-style: oblique;
+}
+
+.hero-overlay h1 {
+  color: transparent;
+  font-size: 60px;
+  font-weight: 500;
+  font-style: initial;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 1px white;
+  margin: 10px 0;
+}
+
+.hero-overlay p {
+  color: antiquewhite;
+  font-size: 40px;
+  font-weight: 500;
+  font-style: italic;
+  padding: 0 15px; /* Add some padding on mobile */
+}
+
+/* --- (rest of your styles) --- */
+
+.image {
+  width: 225px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(22, 2, 107, 0.1);
+  transition: transform 0.3s ease; /* Added transition for hover effect */
+  display: flex; /* Make images stack vertically inside the container */
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ... (rest of your existing CSS) ... */
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For tablets and smaller devices */
+@media (max-width: 992px) {
+    .navlinks {
+        padding: 15px;
+        column-gap: 15px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+
+  .nav-right {
+    display: none; /* Hide the desktop nav links container */
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(236, 228, 228);
+    position: absolute;
+    top: 70px; /* Position below the navbar */
+    left: 0;
+    text-align: center;
+  }
+  
+  .nav-right.active {
+      display: flex; /* Show the menu when active */
+  }
+
+  .navlinks {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navlinks a {
+      padding: 15px 0;
+      border-top: 1px solid #ccc;
+  }
+
+  .nav-search {
+      display: none; /* Optionally hide the search icon on mobile */
+  }
+  
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+
+  .hero-overlay h1 {
+    font-size: 40px;
+  }
+  .hero-overlay h4 {
+    font-size: 35px;
+  }
+  .hero-overlay p {
+    font-size: 24px;
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+  .about-section h2 {
+      font-size: 3.5rem;
+  }
+  .about-section h2 span {
+      font-size: 1.2rem;
+  }
+
+  .info ul {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .column {
+    width: 100%;
+  }
+  
+  .filter {
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .contact-section form {
+      width: 90%;
+  }
+
+  .section-title::before {
+      font-size: 60px;
+  }
+  
+  .services-title, .contact-section h2 {
+      font-size: 60px;
+  }
+}
